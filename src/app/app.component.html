@@ -1,8 +1,13 @@
-<div class="game">
-    <h1>{{ currentCharacter }}</h1>
+<div class="game" (click)="handleClick()">
+  <div class="char">
+    {{ currentCharacter }}
+  </div>
+
+  <div class="stats">
     <p>Score: {{ score }}</p>
     <p>Missed Opportunities: {{ missed }}</p>
     <p>Wrong Clicks: {{ wrongClicks }}</p>
 
-    {{ previousCharacters.toString() }}
+    <input type="number" [(ngModel)]="frequency" step="0.1" (change)="initInterval()">
+  </div>
 </div>

@@ -13,6 +13,8 @@ export class AppComponent {
   missed: number = 0;
   wrongClicks: number = 0;
   spacePressed: boolean = false;
+  frequency: number = 1;
+  interval: any;
 
   ngOnInit() {
     this.startGame();
@@ -20,10 +22,18 @@ export class AppComponent {
 
   startGame() {
     this.updateCharacter();
-    setInterval(() => {
+    this.initInterval();
+  }
+
+  initInterval() {
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
+
+    this.interval = setInterval(() => {
       this.checkMissedOpportunity();
       this.updateCharacter();
-    }, 1000);
+    }, this.frequency * 1000);
   }
 
   updateCharacter() {
@@ -39,8 +49,7 @@ export class AppComponent {
   @HostListener('window:keydown', ['$event'])
   handleKeyDown(event: KeyboardEvent) {
     if (event.code === 'Space') {
-      this.spacePressed = true;
-      this.checkCharacterMatch();
+      this.handleClick();
     }
   }
 
@@ -62,5 +71,10 @@ export class AppComponent {
         this.missed++;
       }
     }
+  }
+
+  handleClick() {
+    this.spacePressed = true;
+    this.checkCharacterMatch();
   }
 }

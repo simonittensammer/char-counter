@@ -1,9 +1,27 @@
 .game {
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
   text-align: center;
   font-family: Arial, sans-serif;
 }
 
-h1 {
-  font-size: 100px;
+.char {
+  flex-grow: 1;
+  font-size: 200px;
   margin: 50px;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats {
+  flex-grow: 0;
+  padding-bottom: 2rem;
+}
+
+input {
+  padding: .5rem;
 }
