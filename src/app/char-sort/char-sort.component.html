@@ -1,0 +1,19 @@
+<div class="word-container">
+  <div class="selected-word">
+    <div class="letters">
+      <span *ngFor="let letter of selectedLetters">{{ letter }}</span>
+    </div>
+  </div>
+
+  <div class="shuffled-word">
+    <button *ngFor="let letter of shuffledWord; let i = index" (click)="selectLetter(letter, i)">
+      {{ letter }}
+    </button>
+  </div>
+
+  <div *ngIf="isCorrectOrder()" class="success-message">
+    <p>Congratulations! You sorted the word correctly!</p>
+  </div>
+
+  <button (click)="resetGame()">Reset Game</button>
+</div>

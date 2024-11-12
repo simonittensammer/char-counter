@@ -1,0 +1,25 @@
+.word-container {
+  text-align: center;
+  margin: 20px;
+}
+
+.shuffled-word button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.selected-word {
+  margin-top: 20px;
+}
+
+.success-message {
+  color: green;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.letters {
+  font-size: 3rem;
+  height: 3rem;
+}

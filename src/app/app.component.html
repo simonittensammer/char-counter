@@ -1,15 +1,1 @@
-<div class="game" (click)="handleClick()">
-  <div class="char">
-    <span *ngIf="!isHidden">
-      {{ currentCharacter }}
-    </span>
-  </div>
-
-  <div class="stats">
-    <p>Score: {{ score }}</p>
-    <p>Missed Opportunities: {{ missed }}</p>
-    <p>Wrong Clicks: {{ wrongClicks }}</p>
-
-    <input type="number" [(ngModel)]="frequency" step="0.1" (change)="initInterval()">
-  </div>
-</div>
+<router-outlet></router-outlet>
