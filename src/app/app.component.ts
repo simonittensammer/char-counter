@@ -15,6 +15,7 @@ export class AppComponent {
   spacePressed: boolean = false;
   frequency: number = 1;
   interval: any;
+  isHidden: boolean = false;
 
   ngOnInit() {
     this.startGame();
@@ -31,12 +32,21 @@ export class AppComponent {
     }
 
     this.interval = setInterval(() => {
-      this.checkMissedOpportunity();
-      this.updateCharacter();
+      this.hideCharacter();
+      setTimeout(() => {
+        this.checkMissedOpportunity();
+        this.updateCharacter();
+      }, this.frequency * 250);
     }, this.frequency * 1000);
   }
 
+  hideCharacter() {
+    this.isHidden = true;
+  }
+
   updateCharacter() {
+    this.isHidden = false;
+
     const randomIndex = Math.floor(Math.random() * this.characters.length);
     this.currentCharacter = this.characters[randomIndex];
     this.previousCharacters.unshift(this.currentCharacter);

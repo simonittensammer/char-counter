@@ -1,6 +1,8 @@
 <div class="game" (click)="handleClick()">
   <div class="char">
-    {{ currentCharacter }}
+    <span *ngIf="!isHidden">
+      {{ currentCharacter }}
+    </span>
   </div>
 
   <div class="stats">
