@@ -1,7 +1,7 @@
 <div class="word-container">
   <div class="selected-word">
     <div class="letters">
-      <span *ngFor="let letter of selectedLetters">{{ letter }}</span>
+      <span>{{ getDisplayWord() }}</span>
     </div>
   </div>
 
@@ -15,5 +15,18 @@
     <p>Congratulations! You sorted the word correctly!</p>
   </div>
 
-  <button (click)="resetGame()">Reset Game</button>
+  <div *ngIf="showAnswer" class="correct-answer">
+    <p>The correct word is: {{ word }}</p>
+  </div>
+
+  <div class="buttons">
+    <button (click)="resetGame()">Reset Game</button>
+    <button (click)="getNewWord()">Get New Word</button>
+    <button (click)="revealAnswer()" *ngIf="!isCorrectOrder() && !showAnswer">Show Correct Answer</button>
+  </div>
+
+  <div>
+    <label for="characterCount">Character Count: </label>
+    <input type="number" id="characterCount" [(ngModel)]="characterCount" (change)="fetchWord()" />
+  </div>
 </div>
