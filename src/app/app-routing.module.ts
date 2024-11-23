@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {AppComponent} from "./app.component";
 import {CharSortComponent} from "./char-sort/char-sort.component";
 import {CharCountComponent} from "./char-count/char-count.component";
+import {ImgCountComponent} from "./img-count/img-count.component";
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'char-sort',
     component: CharSortComponent,
+  },
+  {
+    path: 'img-count',
+    component: ImgCountComponent,
   },
   {
     path: '**',
