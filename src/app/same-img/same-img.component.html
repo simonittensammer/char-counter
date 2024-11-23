@@ -1,4 +1,4 @@
-<div class="game" (click)="handleClick()">
+<div class="game" (click)="onGameClick($event)">
   <div class="top-images">
     <div class="image-set">
       <img *ngFor="let image of topImages" [src]="image" alt="Top Image">

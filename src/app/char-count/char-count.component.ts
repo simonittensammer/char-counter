@@ -90,6 +90,13 @@ export class CharCountComponent {
     }
   }
 
+  onGameClick(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    if (target.tagName !== 'INPUT' && target.tagName !== 'BUTTON') {
+      this.handleClick();
+    }
+  }
+
   handleClick() {
     this.spacePressed = true;
     this.checkCharacterMatch();
