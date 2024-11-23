@@ -6,23 +6,25 @@
   font-family: Arial, sans-serif;
 }
 
-.char {
-  flex-grow: 1;
-  margin: 50px;
-  font-weight: bold;
-
+.image-set {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-grow: 1;
 }
 
 img {
   width: 200px;
+
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -o-user-select: none;
   user-select: none;
+}
+
+.rotating-image {
+  height: 250px;
 }
 
 .stats {

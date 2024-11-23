@@ -4,6 +4,7 @@ import {AppComponent} from "./app.component";
 import {CharSortComponent} from "./char-sort/char-sort.component";
 import {CharCountComponent} from "./char-count/char-count.component";
 import {ImgCountComponent} from "./img-count/img-count.component";
+import {SameImgComponent} from "./same-img/same-img.component";
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'img-count',
     component: ImgCountComponent,
+  },
+  {
+    path: 'same-img',
+    component: SameImgComponent
   },
   {
     path: '**',

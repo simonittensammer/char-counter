@@ -1,0 +1,20 @@
+<div class="game" (click)="handleClick()">
+  <div class="top-images">
+    <div class="image-set">
+      <img *ngFor="let image of topImages" [src]="image" alt="Top Image">
+    </div>
+    <button (click)="generateNewImages()">Generate New Images</button>
+  </div>
+
+  <div class="rotating-image">
+    <img *ngIf="!isHidden" [src]="currentImage" alt="Rotating Image">
+  </div>
+
+  <div class="stats">
+    <p>Score: {{ score }}</p>
+    <p>Missed Opportunities: {{ missed }}</p>
+    <p>Wrong Clicks: {{ wrongClicks }}</p>
+
+    <input type="number" [(ngModel)]="frequency" step="0.1" (change)="initInterval()">
+  </div>
+</div>
